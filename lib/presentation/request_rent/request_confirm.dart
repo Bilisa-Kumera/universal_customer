@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:universal_customer/core/constants/widgets/custom_button.dart';
 import 'package:universal_customer/core/constants/widgets/custom_text.dart';
 
+import '../../core/utils/navigation_helper.dart';
+import '../waiting/waiting_driver.dart';
+
 class RequestConfirm extends StatelessWidget {
   const RequestConfirm({super.key});
 
@@ -171,7 +174,11 @@ class RequestConfirm extends StatelessWidget {
             ),
             const SizedBox(height: 24),
             // Confirm Button
-            CustomButton(onPressed: () {}, text: 'Confirm Booking'),
+            CustomButton(
+                onPressed: () {
+                  NavigationHelper.push(context, WaitingDriverScreen());
+                },
+                text: 'Confirm Ride'),
           ],
         ),
       ),
